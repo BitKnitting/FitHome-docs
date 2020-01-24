@@ -10,11 +10,11 @@ We welcome contributions and suggestions to help us improve this project. THANK 
 
 ### Workflow:
 
-1.  [Fork the FitHome-docs repo](https://help.github.com/articles/fork-a-repo)
+1.  [Fork the FitHome-docs repo](https://github.com/BitKnitting/FitHome-docs)
 2.  Create a branch (git checkout -b my-branch)
 3.  Stage and commit your changes (git commit -am 'description of my changes')
 4.  Push the changes to your fork (git push origin my-branch)
-5.  [Submit a pull request to the parent repo](TBD)
+5.  Submit a pull request to the parent repo.
 
 If you're new to using Git, [the GitHub docs](https://help.github.com/) are quite useful.
 
