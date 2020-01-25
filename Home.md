@@ -11,7 +11,7 @@ The [Electricity Monitor](ElectricityMonitor.md) sends the home's power readings
 - How much money is being saved.
 - How much CO2 is being saved by noting the equivalent gas, oil consumed as well as trees planted.
 
-![overview](images/Overview/FitHome_Experience.png)  
+![overview](FitHome_Experience.png)  
 The FitHome app provides the user with:
 - Personalized insights about what can be easily done to lower the electricity use by using [Data Analysis](DataAnalysis.md).  
 - A __leaderboard__ so the homeowner can see how well they are doing conserving energy compared to the rest of the FitHome community.
