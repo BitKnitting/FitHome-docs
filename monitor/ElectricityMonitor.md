@@ -7,7 +7,7 @@ The goal of this document is to get you set up and running your own home electri
 
 The Electricity Monitor communicates to a Raspberry Pi over SPI to read and then send active and reactive aggregate power readings to the Raspberry Pi.  Readings are stored within the Raspberry Pi's mongo DB.  
 
-![overview](images/Electricity_Monitor_Rasp_Pi.png)  
+![overview](monitor/images/Electricity_Monitor_Rasp_Pi.png)  
   
 The readings can then be used by analytical packages such as Pandas, Keras - or whatever you want to use! - to learn more about how a home's energy is used.
 # Thanks to Those That Went Before
@@ -36,7 +36,7 @@ Aggregate power readings are measured by attaching Current Transformers to the p
 Go to your breaker panel and take a picture similar to the picture shown here.  
 
 Picture 1:  
-![breaker box](images/breaker_box.jpg)   
+![breaker box](monitor/images/breaker_box.jpg)   
 _Overview picture of breaker box_ 
 
 Then post the image to our GitHub.  This way, we can learn more about how houses have their electricity installed.  By doing so, we can make this project more robust and accomodating to different installations.  
@@ -47,7 +47,7 @@ You'll need to know what your house is wired for.  As we note below, many homes 
 ### Current Transformers
 
 Current Transformers (CTs) are our "ears" into how devices are using power within our home.  You can see the CTs on our power line.
-![Current Transformers](images/CTs.png)  
+![Current Transformers](monitor/images/CTs.png)  
 Each of our lines has two CTs - one white, one blue.  The white ones come with the Sense monitor.  The blue ones are the ones we use for this project.  
 
 The CT model we use is [the SCT-013-000 CT](/https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/yhdc-sct-013-000-ct-sensor-report).  Our home's power lines are 100A service.  You may have 200A service.  That will require a different CT.
@@ -61,7 +61,7 @@ I chose to install the CTs myself.  While my family thought this was foolish, I 
 - I'm snapping a plastic "thing" (CT) around a heavily cabled line.
 - For added protection, I turned off the power before putting on the CTs.  Just to make sure, I double checked the power was off with a voltage detector  
   
-![Voltage detector](images/voltage_detector.png)
+![Voltage detector](monitor/images/voltage_detector.png)
 
 Or you can pay an electrician to install.
 
@@ -140,7 +140,7 @@ We'll wire:
 We've tried this on the Rasp Pi 3 B+, Zero W, 3 BV1.2... 
   
 The diagram below points out the Rasp Pi 3B+'s pinout:
-![RaspPi pinout](images/RaspPi_pinout.png)
+![RaspPi pinout](monitor/images/RaspPi_pinout.png)
 - MOSI: pin 19
 - MISO: pin 21
 - CLK:  pin 23
@@ -149,10 +149,10 @@ We'll use GPIO 5 (pin 29) for CS, noting in the [Blinka documentation](https://l
 _The upshot here is basically never connect anything to CE0 (or CE1 for that matter). Use whatever chip select pin you define in CircuitPython and just leave the CE pins alone, it will toggle as if it is the chip select line, completely on its own, so you shouldn't try to use it as a digital input/output/whatever._
 - Wire the MOSI, MISO, SCLK, GND, CS lines from the Rasp Pi to the Energy monitor.
 
-![CS_SPI_PINS](images/CircuitSetupPins.png)
+![CS_SPI_PINS](monitor/images/CircuitSetupPins.png)
 # Test SPI
 Run [atm90e32_spi_test.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/atm90e32_spi_test.py).  It is a simple SPI read.  Here is an image of the traffic from our logic analyzer:
-![SPI_read_logic](images/SPI_read_test.png) 
+![SPI_read_logic](monitor/images/SPI_read_test.png) 
 We know at least SPI read is working correctly.
 
 # Getting to Power Readings
@@ -273,6 +273,6 @@ We use the default filename: ```aggregate.pkl.zip```
 
 Now we can see the aggregate file created by the SystemD service within our file system.
 
-![aggregate file in filesystem](images/EnergyMonitorFirmware/data_extraction_mount.png)
+![aggregate file in filesystem](monitor/images/EnergyMonitorFirmware/data_extraction_mount.png)
  
 We have a colab notebook - [00-load_data.ipynb](https://colab.research.google.com/github/BitKnitting/FitHome_monitor/blob/master/notebooks/00_load_data.ipynb) that walks you through loading the aggregated data into a pandas dataframe.
