@@ -230,26 +230,8 @@ PlugE.service - Collect and send power readings.
  ## List All Services
  ```systemctl list-units | grep .service``` - lists all the current services running.
  # MongoDB
- The Rasp Pi OS comes with a super easy and flexible datastore, mongodb.  Installation is discussed within our [Rasp Pi Setup documentation](RaspPi.md).
- ## Some Simple Mongo Command
-First, get into the mongo client: `$mongo`.  Go to your database: `>use YOURDATABASE`.  `>show collections` 
-```
-> show dbs
-> use FitHome
-switched to db FitHome
-> show collections
-> db.aggregate.find()
-> db.stats()
-system.indexes
-users
->db.users.stats()
-
-> db.users.find()
-{ "_id" : ObjectId("5dd94f0074fece1e23950257"), "name" : "Cristina" }
-{ "_id" : ObjectId("5dd94f0174fece1e23950258"), "name" : "Derek" }
-{ "_id" : ObjectId("5dd975e574fece1e23950259"), "name" : "Cristina" }
-{ "_id" : ObjectId("5dd975e574fece1e2395025a"), "name" : "Derek" }
-```
+ The Rasp Pi OS comes with a super easy and flexible datastore, mongodb. [ReadAndStore.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/ReadAndStore.py) stores readings into the mongodb database that comes with the Rasperry Pi. Installation is discussed within our [Rasp Pi Setup documentation](RaspPi.md). Refer to our [mongod db documentation](mongodb) for more information.  
+ 
 ## [Export Readings to Pandas](#readings_to_pandas)
 We run a SystemD service - [extract_readings.service](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.service) that relies on a [SystemD timer file](https://wiki.archlinux.org/index.php/Systemd/Timers) -  [extract_readings.timer](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.timer) - to run
  [extract_readings.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.py).  This python script relies on the [MonitorData](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/monitor_data.py) to get the records out of the mongodb (database = FitHome, collection = aggregate) and create a pickled zip file.  We chose this format because it is easy to read the data with the Pandas package.
