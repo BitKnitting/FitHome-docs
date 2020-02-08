@@ -29,6 +29,8 @@ wiki    https://github.com/BitKnitting/FitHome.wiki.git (push)
 ```
 ## Commiting changes
 The steps to updating the wiki to include changes include:  
+- `git add .`
+- `git commit <commit message>`
 - `git pull origin master`
 - `git push origin master`
 - `git push -u wiki master`
