@@ -200,7 +200,14 @@ Calculate the value, and change the `VoltageGain` to the calculated value.
 We found the default current gain gave current readings close to what we got with the Kill-A-Watt.  Because it was easy to do so, we set the `CurrentGainCT1` and `CurrentGainCT2` values to our calculation, using the current readings in place of the voltage readings as discussed in the app note.
 # Main Code
 The main code is in [ReadAndStore.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/ReadAndStore.py) We use [systemd](systemd) to keep the code constantly running.  The file is [ReadAndStore.service](https://github.com/BitKnitting/FitHome_monitor/blob/master/ReadAndStore.service).
+ # Reading Store
+ The Rasp Pi OS comes with a super easy and flexible datastore, mongodb. [ReadAndStore.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/ReadAndStore.py) stores readings into the mongodb database that comes with the Rasperry Pi.  Refer to our [mongod db documentation](mongodb) for more information.  
+ # [Exporting Readings into a Pandas Dataframe](#readings_to_pandas)
+We run a SystemD service - [extract_readings.service](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.service) that relies on a [SystemD timer file](https://wiki.archlinux.org/index.php/Systemd/Timers) -  [extract_readings.timer](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.timer) - to run
+ [extract_readings.py](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/extract_readings.py).  This python script relies on the [MonitorData](https://github.com/BitKnitting/FitHome_monitor/blob/master/data_extraction/monitor_data.py) to get the records out of the mongodb (database = FitHome, collection = aggregate) and create a pickled zip file.  We chose this format because it is easy to read the data with the Pandas package.
 
+ ### Environment Variables
+Notice the MonitorData class uses environment variables. We used the technique discussed [in this post](https://unix.stackexchange.com/questions/287743/making-environment-variables-available-for-downstream-processes-started-within-a).
 
 # [Explore Readings with colab](#colab_readings)
 Onto exploring the data!

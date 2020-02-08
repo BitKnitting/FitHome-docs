@@ -88,31 +88,6 @@ The electricity monitor uses SPI to communicate.  We document the setting up the
 
 
 
-# Install MongoDB
-To install mongodb:  
-```
-sudo apt install mongodb
-sudo systemctl enable mongodb
-```
-- We "downgraded" to this version of pymongo. `pip3 install pymongo==3.4.0`
-__NOTE: We needed to use this version of pymongo.  If not, we'd get an error:__
-```
-An error occurred: Server at localhost:27017 reports wire version 0, but this version of PyMongo requires at least 2
-(MongoDB 2.6).
-```
-There's [more on mongodb in this post](Posts/ExploringEnergyDisaggregation/0-UsingMongoDB.md)
-
-# Uninstall MongoDB
-...just in case...  
-
-[From this post](https://askubuntu.com/questions/147135/how-can-i-uninstall-mongodb-and-reinstall-the-latest-version):  
-  
-```
-sudo apt-get purge mongodb mongodb-clients mongodb-server mongodb-dev
-sudo apt-get purge mongodb-10gen
-sudo apt-get autoremove
-```
-This should also remove your config from `/etc/mongodb.conf`. If you want to completely clean up, you might also want to remove the data directory `/var/lib/mongodb`, so long as you backed it up or don't want it any more.
 
 
 # Other Stuff
