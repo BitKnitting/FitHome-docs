@@ -44,6 +44,12 @@ Given that both files are in the monitor directory, the first guess at the image
 and the image shows up on our local copy.  However, it was not showing up on the GitHub wiki page until we changed the image path to include the monitor directory.  I.e.:  
 ```
 ![RaspPi Pinout](monitor/images/RaspPi_pinout.png)   
+# Intra-Page Linking
+You may want to link to a section within a page.  
+- Page with content, e.g.:   
+## [Mount Drive](#mount_drive)  
+- Page with link to content, e.g.:  
+ [SSHFS](https://github.com/BitKnitting/FitHome/wiki/RaspPi#mount-drive)  
 
 
 

@@ -68,9 +68,36 @@ Blindly following recommendations,
 - `sudo apt-get upgrade`
 - `sudo reboot`
 
-## Git
+## Also install
 We'll also need Git/Github:
-`sudo apt-get install git`
+- `sudo apt-get install git`  
+- `sudo apt-get install python3-venv`
+## Python Goop
+### Pandas
+After installing Pandas/Numpy, we'd get the error:   
+```
+Original error was: libf77blas.so.3: cannot open shared object file: No such file or directory
+```  
+This was fixed by running:  
+```  
+sudo apt-get install libatlas-base-dev
+```  
+### Bokeh
+
+```
+ImportError: libopenjp2.so.7: cannot open shared object file: No such file or directory
+
+sudo apt-get install libopenjp2-7-dev  
+
+ImportError: libtiff.so.5: cannot open shared object file: No such file or directory
+
+sudo apt install libtiff5
+```
+
+
+
+
+
 
 # Enable Remote VS Code
 _NOTE: Remote VS Code [does not support the Rasp Pi Zero (or ZeroW)](https://github.com/microsoft/vscode-remote-release/issues/669)_  

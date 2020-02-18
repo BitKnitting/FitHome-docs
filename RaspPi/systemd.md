@@ -11,8 +11,10 @@ Not being fluent systemd users, we found the following info useful:
 * set permissions so systemd can execute the script: ```sudo chmod +x {python script}```
 * copy service file to where systemd expects it to be.  ```sudo cp {service script} /lib/systemd/system/.```
 * enable the service with ```sudo systemctl enable {service script}```.
+* disable the service with ```sudo systemctl disable {service script}```.  Most of the services will restart when the Rasp Pi is rebooted. We must disable the service to prevent restarting.
 * check to make sure the service has been enabled with ```systemctl is-enabled {service script}```
 * start the service with ```sudo systemctl start {service script}```.
+* stop the service with ```sudo systemctl stop {service script}```.
 * check to make sure the service has been started with ```systemctl is-active {service script}```
 See the ```systemd status``` command info below to debug why your service did not start.
 ## Debugging

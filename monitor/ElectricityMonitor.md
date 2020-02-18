@@ -97,7 +97,7 @@ SPI needs to be enabled on the Rasp Pi.
 - `sudo raspi-config`
 - Go to `Interfacing Options`, choose SPI, choose Enable.
 
-# Set up FitHome_monitor Git repo
+## [Set Up the Repo](#repo)
   
 Now that the Rasp Pi has been configured, let's get the python code used to talk with the energy monitor up and running.
 - Create a projects directory on your Rasp Pi.
@@ -116,7 +116,7 @@ creates a virtual environment in the venv directory.  When the venv is activated
 ```
 source venv/bin/activate
 ```
-- Install Python packages (stuff like everything needed for [Blinka](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/circuitpython-raspi))using `pip install -r requirements.txt`.
+- Install Python packages using `pip install -r requirements.txt`.
 # Access Project through VS Code
 Follow the steps outlined in the section on [Remote VS Code](RaspPi.md)
 # Getting to Blinka
@@ -215,7 +215,7 @@ Onto exploring the data!
 For this part of the workflow, we use [SSHFS](https://github.com/BitKnitting/FitHome/wiki/RaspPi#mount-drive), colab, and some simple utility functions to start playing with the data.  Steps:
 - Mount the Rasp Pi's drive so we can access it like a local drive. e.g.:
 ```
-sshfs pi@192.168.86.20: /Users/auser/mount
+sshfs pi@192.168.86.20: /Users/<a user>/mount
 ```
 You will have a different mount point as well as Rasp Pi username and IP address.
 Navigate to the file where the updated aggregate readings are located.  Our file was located in:  
