@@ -4,4 +4,4 @@
     - [RaspPi](RaspPi)  
         -[SystemD](systemd)
     - [MongoDB](mongodb)
-- [Exploratory Data Analysis](eda)
+- [Reading the Data](reading)
