@@ -48,3 +48,8 @@ types
 util
 warnings
 ```
+# Logging
+
+```
+import logging 
+logging.basicConfig(filename='name.log',level=logging.DEBUG)
