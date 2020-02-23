@@ -28,7 +28,7 @@ The overall workflow is:
 5.  Submit a pull request.  
   
 We'll get your pull request and then review your changes for publishing to the wiki.
-## Images
+## Working with Images
 Images are tricky because we've introduced a directory structure within a GitHub wiki that is used to being flat.  The path we need to use will most likely not show the image on the local edit.  Say for example, there is the image:
 ```
 FitHome-docs/monitor/images/RaspPi_pinout.png  
@@ -43,13 +43,26 @@ Given that both files are in the monitor directory, the first guess at the image
 ```
 and the image shows up on our local copy.  However, it was not showing up on the GitHub wiki page until we changed the image path to include the monitor directory.  I.e.:  
 ```
-![RaspPi Pinout](monitor/images/RaspPi_pinout.png)   
+![RaspPi Pinout](monitor/images/RaspPi_pinout.png)  
+``` 
 # Intra-Page Linking
 You may want to link to a section within a page.  
-- Page with content, e.g.:   
+There are two sides; 1) the page that holds the content 2) the page linking to the content
+- e.g. Page with content:   
 ## [Mount Drive](#mount_drive)  
-- Page with link to content, e.g.:  
+- e.g. Page linking to content:  
  [SSHFS](https://github.com/BitKnitting/FitHome/wiki/RaspPi#mount-drive)  
+
+
+# Use Permanent GitHub Links
+When linking to GitHub content, use permanent links as discussed on the [Getting permanent links to files](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files) post. For example, the latest version of readings.py is at ```https://github.com/BitKnitting/FitHome_EDA/blob/master/readings/readings.py```.
+
+what we want to link to is a permanent link to the specific version at the time of this writing.  To do this, hit the ```y``` key.  For the reading.py page this gets the link ```https://github.com/BitKnitting/FitHome_EDA/blob/dafae9d8a2a2da41ff365fd76922e46dcfbd63ee/readings/readings.py```
+
+## GitHub Page Link to a Line Number
+First, get the permanent link as discussed above.  Then [as noted in this SO post](https://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github), _Click on the line number you want (like line 18), and the URL in your browser will get a #L18 tacked onto the end. You literally click on the 18 at the left side, not the line of code._
+
+
 
 
 

@@ -1,7 +1,10 @@
 # Contact
 <a href="mailto:contact@fithome.life">Email Us</a>  
 # Overview
-We are far from experts when it comes to using the Rasp Pi.  Here we document the goop we do each time we start up a new Rasp Pi.
+We are using a Raspberry Pi 3 B +.  
+
+In this section, we discuss how we installed the Rasp Pi operating system as well as the virtual environment and libraries that we use.
+
 
 # Installation
 - Put the micro-SD [e.g.: cheap one on Amazon](https://www.amazon.com/gp/product/B004ZIENBA/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=bitknittingwo-20&linkId=923f12067ad3395ed04f043c37d8c39f)  that will hold the Rasp Pi image into an SD Card reader (on our Mac).

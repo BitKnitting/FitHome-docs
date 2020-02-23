@@ -5,3 +5,4 @@
         -[SystemD](systemd)
     - [MongoDB](mongodb)
 - [Reading the Data](reading)
+- [Visualizing the Data](plotting)
