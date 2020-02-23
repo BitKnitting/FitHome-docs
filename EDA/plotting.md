@@ -9,7 +9,7 @@ The challenges we had include:
 - Getting Flask + Bokeh server to work together.
 - Getting the Bokeh server to run on our 32 bit Raspian Raspberry Pi (we are using a Raspberry Pi 3 B +).
 # Setup The Project
-- Set up a Virtual Environment [like we did here](ElectricityMonitor/#repo)
+- Set up a Virtual Environment [like we did here](ElectricityMonitor/#set-up-the-repo)
 Clone the [FitHome_EDA GitHub project](__TBD: LINK TO FITHOME_EDA GITHUB PROJECT__)
 # app_interactive.py
 Our Flask app resides in [app_interactive.py](__TBD: PERMANENT LINK ON GITHUB__)
