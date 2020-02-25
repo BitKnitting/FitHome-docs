@@ -98,10 +98,6 @@ sudo apt install libtiff5
 ```
 
 
-
-
-
-
 # Enable Remote VS Code
 _NOTE: Remote VS Code [does not support the Rasp Pi Zero (or ZeroW)](https://github.com/microsoft/vscode-remote-release/issues/669)_  
   

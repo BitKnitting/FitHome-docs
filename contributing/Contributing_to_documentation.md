@@ -48,6 +48,20 @@ and the image shows up on our local copy.  However, it was not showing up on the
 # Intra-Page Linking
 You may want to link to a section within a page.  
 There are two sides; 1) the page that holds the content 2) the page linking to the content
+
+To link to the section on a wiki page, use the title with dashes around.
+
+For example:  
+  
+```
+## Mount Drive
+```
+might be a title on the RaspPi page.  The link to this section would be:  
+  
+```
+[blah, blah](RaspPi/#mount-drive)  
+```
+Was
 - e.g. Page with content:   
 ## [Mount Drive](#mount_drive)  
 - e.g. Page linking to content:  

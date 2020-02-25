@@ -97,7 +97,7 @@ SPI needs to be enabled on the Rasp Pi.
 - `sudo raspi-config`
 - Go to `Interfacing Options`, choose SPI, choose Enable.
 
-## [Set Up the Repo](#repo)
+## [Set Up the Project]
   
 Now that the Rasp Pi has been configured, let's get the python code used to talk with the energy monitor up and running.
 - Create a projects directory on your Rasp Pi.
